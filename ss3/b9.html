@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function zipArrays(...arrays) {
+            const lengths = arrays.map(arr => arr.length);
+            const firstLength = lengths[0];
+            const isSameLength = lengths.every(length => length === firstLength);
+        
+            if (!isSameLength) {
+                alert("Độ dài của các mảng không bằng nhau.");
+            }
+        
+            const zippedArray = [];
+            for (let i = 0; i < firstLength; i++) {
+                zippedArray.push(arrays.map(arr => arr[i]));
+            }
+        
+            return zippedArray;
+        }
+        
+        const arr1 = [1, 2, 3];
+        const arr2 = ["a", "b", "c"];
+        const arr3 = [true, false, true];
+        
+        const zippedResult = zipArrays(arr1, arr2, arr3);
+        console.log(zippedResult);
+        
+    </script>
+</body>
+</html>

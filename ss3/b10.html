@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sumArrays(...arrays) {
+            const result = [];
+            for (const array of arrays) {
+              let sum = 0;
+              for (const element of array) {
+                sum += element;
+              }
+          
+              result.push(sum);
+            }
+          
+            return result;
+          }
+          
+          const array1 = [1, 2, 3];
+          const array2 = [4, 5, 6];
+          const array3 = [7, 8, 9];
+          
+          const totalSums = sumArrays(array1, array2, array3);
+          console.log(totalSums); // [6, 15, 24]
+          
+    </script>
+</body>
+</html>
